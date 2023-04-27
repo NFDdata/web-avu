@@ -1,0 +1,25 @@
+{
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "trailingComma": "none",
+  "arrowParens": "avoid",
+  "singleQuote": true,
+  "printWidth": 80,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "importOrder": [
+    "^(next/(.*)$)|^(next$)",
+    "^(react/(.*)$)|^(react$)",
+    "<THIRD_PARTY_MODULES>",
+    "next-seo.config",
+    "^components/(.*)$",
+    "^utils/(.*)$",
+    "^assets/(.*)$",
+    "^@fontsource/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true
+}
