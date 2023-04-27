@@ -12,7 +12,7 @@ export const Container: FC<FlexProps> = ({ title, ...props }) => {
   return (
     <>
       <Head>
-        <title>VICA</title>
+        <title>AVU</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, with=device-width" />
       </Head>

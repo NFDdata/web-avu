@@ -22,7 +22,7 @@ import { useActiveAlertMessage } from 'context/activealertmessage';
 import { useSession } from 'next-auth/react';
 import { colors } from 'theme';
 
-import {  DesktopMenuProps } from '../types';
+import { DesktopMenuProps } from '../types';
 
 // Componete de que maneja los distintos componentes dentro del navbar
 export const DesktopMenu: FC<DesktopMenuProps> = ({
@@ -100,7 +100,7 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">{user?.user?.userData.full_name}</Text>
+                  <Text fontSize="sm">Usuario</Text>
                   <Text fontSize="xs" color="gray.600">
                     {user?.user?.rol?.toUpperCase()}
                   </Text>
