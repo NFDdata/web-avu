@@ -3,13 +3,11 @@ import { IconType } from 'react-icons/lib';
 import { RiArrowLeftRightFill } from 'react-icons/ri';
 import { CloseButton, Flex, Icon, Img, Link, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { useSession } from 'next-auth/react';
 import { colors } from 'theme';
 
 import { SidebarProps } from './types';
 
 export const SideBar: FC<SidebarProps> = ({ onClose, ...rest }) => {
-  const { data } = useSession();
   const router = useRouter();
 
   const createItem = (

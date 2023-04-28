@@ -10,7 +10,7 @@ import CredentialsProvider, {
 
 const secret = process.env.SECRET || 'TH151SMYJWT53CR3TK3Y155054F34ND33CUR3';
 
-export type Role = 'admin' | 'vica' | 'concierge';
+export type Role = 'superAdmin' | 'admin' | 'user';
 
 export default NextAuth({
   providers: [
