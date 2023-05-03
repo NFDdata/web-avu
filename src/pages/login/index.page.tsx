@@ -45,9 +45,7 @@ const Index: NextPage = () => {
           }
         })
         .catch(err => {
-          if (err.include('SyntaxError')) console.log('holi.login');
-
-          console.error(err);
+          console.error('el error:', err);
         });
 
       setLoading(false);
