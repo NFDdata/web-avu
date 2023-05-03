@@ -67,12 +67,12 @@ export const SideBar: FC<SidebarProps> = ({ onClose, ...rest }) => {
               align="center"
               p="4"
               mx="4"
-              bg={router.asPath === item.path ? 'blue.400' : 'none'}
+              bg={router.asPath === item.path ? colors.primary.normal : 'none'}
               borderRadius="lg"
               role="group"
               cursor="pointer"
               _hover={{
-                bg: 'blue.400',
+                bg: colors.primary[900],
                 color: 'white'
               }}>
               {item.icon && (
@@ -80,7 +80,7 @@ export const SideBar: FC<SidebarProps> = ({ onClose, ...rest }) => {
                   mr="4"
                   fontSize="20"
                   _groupHover={{
-                    color: 'white'
+                    color: colors.text
                   }}
                   as={item.icon}
                 />

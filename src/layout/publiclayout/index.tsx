@@ -5,8 +5,6 @@ import { LayoutGroup } from 'framer-motion';
 import { useScreenSize } from 'hooks/usescreensize';
 import { LayoutProps } from 'layout/types';
 
-import background from '../../assets/layout.jpg';
-
 const PublicLayout: FC<LayoutProps> = ({ children }) => {
   const { screenHeight } = useScreenSize();
 
@@ -24,7 +22,6 @@ const PublicLayout: FC<LayoutProps> = ({ children }) => {
         <Flex
           py={8}
           w={'100%'}
-          bgImage={background.src}
           direction={'column'}
           align={'center'}
           minH={'100vh'}>

@@ -33,7 +33,7 @@ export const containerForm = {
   p: ['35px'],
   mt: 5,
   borderRadius: '6px',
-  bgColor: '#012c42'
+  bgColor: '#2980B9'
 };
 
 export const signInLabel = {

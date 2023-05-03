@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Button, Fade, Flex, Img, Text } from '@chakra-ui/react';
+import { Button, Fade, Flex, Text } from '@chakra-ui/react';
 import CustomFormControl from '@components/customformcontrol';
 import SigninAlert from '@components/siginalert';
 
@@ -15,11 +15,11 @@ const SignIn: FC<SingInProps> = ({
 }) => {
   return (
     <Flex {...styles.container}>
-      <Flex>
-        <Img src={'sadd'} alt="#" w={'165px'} />
-      </Flex>
+      <Flex>{/* <Img src={'#'} alt="#" w={'165px'} /> */}</Flex>
       <Flex {...styles.containerView}>
-        <Text {...styles.signInTitle}>¡BIENVENIDO A AVU!</Text>
+        <Text {...styles.signInTitle} color={'black'}>
+          ¡BIENVENIDO A AVU!
+        </Text>
         <Flex {...styles.containerForm}>
           {control && (
             <Fade in={control}>

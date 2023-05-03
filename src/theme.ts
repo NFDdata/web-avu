@@ -14,12 +14,12 @@ export const smallScreenheight = '48.688em';
 
 export const colors = {
   selectSidebar: '#002550',
-  text: '#282828',
-  navbar: '#003250',
+  text: '2C3E50',
+  navbar: '#2980B9',
   white: '#FFF',
   primary: {
-    normal: '#003250',
-    '900': '#003250',
+    normal: '#8E44AD',
+    '900': '#ECF0F1',
     '800': '#1366D8',
     '700': '#3786F3',
     '600': '#62A4FF'

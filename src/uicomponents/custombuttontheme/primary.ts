@@ -3,7 +3,7 @@ export const primary = {
   p: 5,
   fontWeight: 600,
   color: 'white',
-  bg: '#003250',
+  bg: '#2980B9',
   _disabled: {
     pointerEvents: 'none'
   },
