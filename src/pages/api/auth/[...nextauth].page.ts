@@ -3,14 +3,52 @@ import axios, { AxiosError } from 'axios';
 import { decodeDictionary } from 'helpers/dictionary/dictionary.helper';
 // import Jwt from 'jsonwebtoken';
 import { BaseResponse } from 'models/response.model';
+import { GetServerSidePropsContext } from 'next';
 import NextAuth, { UserSession } from 'next-auth';
 import CredentialsProvider, {
   CredentialInput
 } from 'next-auth/providers/credentials';
+import { getSession } from 'next-auth/react';
 
 const secret = process.env.SECRET || 'TH151SMYJWT53CR3TK3Y155054F34ND33CUR3';
 
 export type Role = 'superAdmin' | 'admin' | 'user';
+
+
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const session = await getSession(context); // Obtengo la sesión
+  // const roles = ['superAdmin', 'admin', 'user']; // Usuarios autorizados en la página
+
+  // Si el usuario no tiene sesión redirigr a la página de login
+  if (!session) {
+    return {
+      redirect: {
+        destination: '/login',
+        permanent: false
+      }
+    };
+  }
+
+  // const userRoles = session.user?.rol;
+
+  // if (!roles.some(r => userRoles?.includes(r))) {
+  //   // Si el usuario no tiene permiso para acceder a la página, redirigir a la página de de actividades
+  //   return {
+  //     redirect: {
+  //       destination: '/',
+  //       permanent: false
+  //     }
+  //   };
+  // }
+
+  return {
+    props: {
+      session
+    }
+  };
+};
 
 export default NextAuth({
   providers: [
@@ -34,6 +72,7 @@ export default NextAuth({
               }
             }
           );
+          console.log('el response', response.data);
 
           return response.data;
         } catch (error) {
