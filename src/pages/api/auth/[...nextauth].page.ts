@@ -38,7 +38,7 @@ export default NextAuth({
           return response.data;
         } catch (error) {
           const err = error as AxiosError<BaseResponse>;
-
+          console.log('error', error);
           return {
             ...err.response,
             status: err.response?.status,
