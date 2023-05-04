@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '18.15.0'
 
-      - name: yarn install and build
+      - name: install and build
         run: |
           yarn install
           yarn build 
