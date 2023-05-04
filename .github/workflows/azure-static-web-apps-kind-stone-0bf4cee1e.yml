@@ -29,7 +29,13 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
+          output_location: "public"
+        env:
+          NEXT_PUBLIC_API_URL="https://avu-desarrollo.azurewebsites.net/api"
+          NEXT_PUBLIC_AUTH_URL="https://avu-desarrollo.azurewebsites.net/api"
+          NEXTAUTH_URL="http://localhost:8000"
+          SECRET="TH151SMYJWT53CR3TK3Y155054F34ND33CUR3 "
+          # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
