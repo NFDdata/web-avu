@@ -7,10 +7,22 @@ declare module 'next-auth' {
   }
 
   interface UserSession {
-    token: string;
-    rol?: string;
-    openRemoteUser: RemoteUser;
-    userData: UserData;
+    id: string;
+    email: string;
+    accessToken: string;
+    name: string;
+    secondName: string;
+    lastName: string;
+    secondLastName: string;
+    documentNumber: string;
+    documentType: DOCUMENT_TYPE;
+    state: string;
+    city: string;
+    postalCode: string;
+    country: string;
+    phone: string;
+    status: UserStatus;
+    activateAccountToken?: string;
   }
 
   interface User {
@@ -18,6 +30,7 @@ declare module 'next-auth' {
     message: string;
     data: string;
     timestamp: string;
+    error?: string
     id: string;
   }
 

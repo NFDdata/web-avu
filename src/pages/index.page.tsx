@@ -7,6 +7,7 @@ import { colors } from 'theme';
 
 const Index: NextPage = () => {
   const { data: user } = useSession();
+  console.log('buena usuario: ', user?.user);
 
   // retornar en caso de que falta algo
   if (!user) return <Loading />;

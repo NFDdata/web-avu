@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { AxiosError } from 'axios';
 import { statusLoginEnum } from 'constants/enum';
 import { useActiveAlertMessage } from 'context/activealertmessage';
 import { ActiveAlertTypeEnum } from 'context/activealertmessage/constants';
 import { useFormik } from 'formik';
-import BaseLoginResponse from 'models/response.model';
+import BaseResponse from 'models/response.model';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
@@ -30,11 +31,11 @@ const Index: NextPage = () => {
         redirect: false
       })
         .then(res => {
-          if (
-            (res as unknown as BaseLoginResponse)?.error ===
-            statusLoginEnum.unauthorized
-          ) {
+          if (res?.error === statusLoginEnum.unauthorized) {
             setError('Usuario no existe o la contraseña es incorrecta');
+            setControl(true);
+          } else if (res?.error === statusLoginEnum.pendingConfirmation) {
+            setError('El usuario no ha confirmado su cuenta');
             setControl(true);
           } else {
             setValues(
@@ -44,7 +45,7 @@ const Index: NextPage = () => {
             router.push('/');
           }
         })
-        .catch(err => {
+        .catch((err: AxiosError<BaseResponse>) => {
           console.error('el error:', err);
         });
 
