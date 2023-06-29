@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/react';
 import { AlertMessage } from '@components/alertmessage';
 import { useActiveAlertMessage } from 'context/activealertmessage';
-import { useSession } from 'next-auth/react';
+// import { useSession } from 'next-auth/react';
 import { colors } from 'theme';
 
 import { DesktopMenuProps } from '../types';
@@ -33,7 +33,7 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({
   ...rest
 }) => {
   // Hooks usados
-  const { data: user } = useSession();
+  // const { data: user } = useSession();
   const isMobile = useBreakpointValue({ base: true, md: false });
   const { isOpen, message, type, onClose } = useActiveAlertMessage();
 
@@ -102,7 +102,7 @@ export const DesktopMenu: FC<DesktopMenuProps> = ({
                   ml="2">
                   <Text fontSize="sm">Usuario</Text>
                   <Text fontSize="xs" color="gray.600">
-                    {user?.user?.rol?.toUpperCase()}
+                    {/* {user?.user?.rol?.toUpperCase()} */}
                   </Text>
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
